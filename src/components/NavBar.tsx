@@ -1,4 +1,4 @@
-export default function Header() {
+export default function navbar() {
   return (
     <div className="top-bar" id="example-menu">
       <div className="top-bar-left">

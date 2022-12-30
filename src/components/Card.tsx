@@ -1,4 +1,4 @@
-export default function article() {
+export default function card() {
   return (
     <>
       <div className="card" style={{ width: "80%", margin: "20px auto" }}>

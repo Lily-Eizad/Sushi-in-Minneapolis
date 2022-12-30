@@ -1,20 +1,20 @@
 import "./App.css";
-import Header from "./components/Header";
-import Article from "./components/Article";
+import Navbar from "./components/NavBar";
+import Card from "./components/Card";
 export default function App() {
   return (
     <>
-      <Header />
+      <Navbar />
       <div className="grid-container ">
         <div className="grid-x ">
           <div className="cell medium-6 large-4 small-12">
-            <Article />
+            <Card />
           </div>
           <div className="cell  medium-6 large-4 small-12">
-            <Article />
+            <Card />
           </div>
           <div className="cell  medium-6 large-4 small-12">
-            <Article />
+            <Card />
           </div>
         </div>
       </div>
