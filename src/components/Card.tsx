@@ -1,4 +1,4 @@
-import { Restaurant } from "../hooks/useSearch";
+import { Restaurant } from "../models/Restaurant";
 
 export type CardProps = {
   restaurant: Restaurant;

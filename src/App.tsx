@@ -6,8 +6,6 @@ import { useSearch } from "./hooks/useSearch";
 export default function App() {
   const { restaurants, searchParams } = useSearch("burgers", "taos");
 
-  console.log(restaurants);
-
   // handle no results or empty results array
   if (!restaurants || !restaurants.length) {
     <div className="grid-container ">
