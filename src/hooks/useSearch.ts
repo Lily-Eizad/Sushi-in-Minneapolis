@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
-import { SearchParams, getRestaurants } from "./api/api";
+import { getRestaurants } from "./api/api";
 
-export function useSearch({ term, location }: SearchParams) {
+export function useSearch(term: string, location: string) {
   const [restaurants, setRestaurants] = useState([]);
-  const [searchParams, setSearchParams] = useState({} as SearchParams);
+  const [searchParams, setSearchParams] = useState({
+    term: term,
+    location: location,
+  });
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = () => {
       try {
-        await getRestaurants({ term, location }).then((res) => {
+        getRestaurants(searchParams).then((res) => {
           setRestaurants(res);
         });
       } catch (error) {
