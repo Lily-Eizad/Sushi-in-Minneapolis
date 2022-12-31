@@ -12,7 +12,11 @@ export default function navbar() {
             <input type="search" placeholder="Search" />
           </li>
           <li>
-            <button type="button" className="button">
+            <button
+              data-testid="search-button"
+              type="button"
+              className="button"
+            >
               Search
             </button>
           </li>
