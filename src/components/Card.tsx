@@ -1,20 +1,23 @@
-export default function card() {
+import { Restaurant } from "../hooks/useSearch";
+
+export type CardProps = {
+  restaurant: Restaurant;
+};
+
+export default function card({ restaurant }: CardProps) {
   return (
-    <>
+    <div className="cell medium-6 large-4 small-12">
       <div className="card" style={{ width: "80%", margin: "20px auto" }}>
-        <div className="card-divider">React.js</div>
-        <img
-          alt="some thing wrong"
-          src="https://source.unsplash.com/random/300x300"
-        />
+        <div className="card-divider">{restaurant.name}</div>
+        <img alt="some thing wrong" src={restaurant.imageURL} />
         <div className="card-section">
-          <h4>My card harding read now</h4>
+          <h4>My card heading</h4>
           <p>
             It has an easy to override visual style, and is appropriately
             subdued.
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
