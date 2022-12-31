@@ -1,8 +1,9 @@
+import { parse } from "path";
 import { useState, useEffect } from "react";
 import { getRestaurants } from "./api/api";
 
 export function useSearch(term: string, location: string) {
-  const [restaurants, setRestaurants] = useState([]);
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [searchParams, setSearchParams] = useState({
     term: term,
     location: location,
@@ -12,7 +13,16 @@ export function useSearch(term: string, location: string) {
     const fetchData = () => {
       try {
         getRestaurants(searchParams).then((res) => {
-          setRestaurants(res);
+          const parsedRestaurants: Restaurant[] = res.businesses.map(
+            (b: Record<string, any>) => {
+              return {
+                id: b.id,
+                name: b.name,
+                imageURL: b.image_url,
+              };
+            }
+          );
+          setRestaurants(parsedRestaurants);
         });
       } catch (error) {
         console.log("Error fetching restaurants: ", error);
@@ -27,3 +37,9 @@ export function useSearch(term: string, location: string) {
     setSearchParams,
   };
 }
+
+export type Restaurant = {
+  id: string;
+  name: string;
+  imageURL: string;
+};

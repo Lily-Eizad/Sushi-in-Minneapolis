@@ -4,24 +4,27 @@ import Card from "./components/Card";
 import { useSearch } from "./hooks/useSearch";
 
 export default function App() {
-  const { restaurants, searchParams } = useSearch("burgers", "berlin");
+  const { restaurants, searchParams } = useSearch("burgers", "taos");
 
   console.log(restaurants);
+
+  // handle no results or empty results array
+  if (!restaurants || !restaurants.length) {
+    <div className="grid-container ">
+      <div className="grid-x ">
+        <div>Sorry, No results matched your search</div>
+      </div>
+    </div>;
+  }
 
   return (
     <>
       <Navbar />
       <div className="grid-container ">
         <div className="grid-x ">
-          <div className="cell medium-6 large-4 small-12">
-            <Card />
-          </div>
-          <div className="cell  medium-6 large-4 small-12">
-            <Card />
-          </div>
-          <div className="cell  medium-6 large-4 small-12">
-            <Card />
-          </div>
+          {restaurants.map((r) => {
+            return <Card key={r.id} restaurant={r} />;
+          })}
         </div>
       </div>
     </>
