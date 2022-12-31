@@ -1,12 +1,12 @@
-import { parse } from "path";
 import { useState, useEffect } from "react";
 import { getRestaurants } from "./api/api";
 import { Restaurant } from "../models/Restaurant";
 
-export function useSearch(term: string, location: string) {
+export function useSearch(location: string) {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  //I could simply pass a string for location as a default state instead
+  //of an object, but i'd use this model in a real world setting for scaling
   const [searchParams, setSearchParams] = useState({
-    term: term,
     location: location,
   });
 
@@ -14,7 +14,7 @@ export function useSearch(term: string, location: string) {
     const fetchData = () => {
       try {
         getRestaurants(searchParams).then((res) => {
-          // console.log(res.businesses);
+          console.log(res);
           const parsedRestaurantsData = getParsedRestaurantsData(
             res.businesses
           );

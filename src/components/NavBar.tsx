@@ -3,7 +3,7 @@ export default function navbar() {
     <div className="top-bar" id="example-menu">
       <div className="top-bar-left">
         <ul className="dropdown menu" data-dropdown-menu>
-          <li className="menu-text">Logo</li>
+          <li className="menu-text">Yushi: Yelp but for sushi</li>
         </ul>
       </div>
       <div className="top-bar-right">
