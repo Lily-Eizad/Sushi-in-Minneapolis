@@ -10,6 +10,8 @@ describe("GetParsedRestaurantData", () => {
         id: mockBusinesses[0].id,
         name: mockBusinesses[0].name,
         imageURL: mockBusinesses[0].image_url,
+        price: mockBusinesses[0].price,
+        rating: mockBusinesses[0].rating,
       },
     ];
     expect(result).toEqual(expectedResult);

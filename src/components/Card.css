@@ -1,0 +1,31 @@
+.card {
+  background: black;
+  color: white;
+  padding: 20px;
+  border-radius: 5%;
+}
+
+.card-image {
+  border-radius: 3%;
+}
+
+.card-title {
+  font-size: 20px;
+}
+
+.rating {
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+
+.price {
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+
+.card-image {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 312px;
+}
