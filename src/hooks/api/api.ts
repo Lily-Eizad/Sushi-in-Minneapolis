@@ -6,8 +6,12 @@ import { SearchParams } from "../../models/Search";
 
 const PATH = "/businesses/search";
 
-export async function getRestaurants(queryParams: SearchParams) {
-  const query = `term=sushi&location=${queryParams.location}`;
+export async function getRestaurants(
+  queryParams: SearchParams,
+  offset: number
+) {
+  const query = `term=sushi&location=${queryParams.location}&offset=${offset}`;
+  console.log("query: ", query);
   return await fetch(`${API_BASE_URL}${PATH}?${query}`, {
     headers: {
       Authorization: `Bearer ${BEARER_TOKEN}`,

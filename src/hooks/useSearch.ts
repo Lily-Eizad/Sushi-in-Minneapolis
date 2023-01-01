@@ -1,35 +1,49 @@
 import { useState, useEffect } from "react";
 import { getRestaurants } from "./api/api";
 import { Restaurant } from "../models/Restaurant";
+import { SearchParams } from "../models/Search";
 
 export function useSearch(location: string) {
+  //data state
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  //infinite scroll state
+  const [infiniteScroll, setInfiniteScroll] = useState({
+    currentPage: 0,
+    offset: 0,
+  });
+
   //I could simply pass a string for location as a default state instead
   //of an object, but i'd use this model in a real world setting for scaling
-  const [searchParams, setSearchParams] = useState({
+  const [searchParams, setSearchParams] = useState<SearchParams>({
     location: location,
   });
 
-  useEffect(() => {
-    const fetchData = () => {
-      try {
-        getRestaurants(searchParams).then((res) => {
-          console.log(res);
-          const parsedRestaurantsData = getParsedRestaurantsData(
-            res.businesses
-          );
-          setRestaurants(parsedRestaurantsData);
+  const fetchData = () => {
+    try {
+      getRestaurants(searchParams, infiniteScroll.offset).then((res) => {
+        console.log(res);
+        const parsedRestaurantsData = getParsedRestaurantsData(res.businesses);
+        setRestaurants([...restaurants, ...parsedRestaurantsData]);
+        setInfiniteScroll({
+          currentPage: infiniteScroll.currentPage + 1,
+          offset: infiniteScroll.offset + 20,
         });
-      } catch (error) {
-        console.log("Error fetching restaurants: ", error);
-      }
-    };
+      });
+    } catch (error) {
+      console.log("Error fetching restaurants: ", error);
+    }
+  };
+
+  useEffect(() => {
     fetchData();
   }, [searchParams]);
 
   return {
     restaurants,
     searchParams,
+    setInfiniteScroll,
+    infiniteScroll,
+    fetchData,
     setSearchParams,
   };
 }
