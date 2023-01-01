@@ -10,22 +10,22 @@
 }
 
 .card-title {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .rating {
-  font-size: 20px;
+  font-size: 15px;
   margin-bottom: 0px;
 }
 
 .price {
-  font-size: 20px;
+  font-size: 15px;
   margin-bottom: 0px;
 }
 
-@media only screen and (min-width: 992px) {
-  .card-image {
-    width: 416px;
-    height: 312px;
-  }
+.card-image {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 312px;
 }
