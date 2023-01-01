@@ -1,10 +1,13 @@
 import { API_BASE_URL, BEARER_TOKEN } from "./config";
-import queryString from "query-string";
+import { SearchParams } from "../../models/Search";
+//the below import is an exampel of the library i'd
+//for the query string in a real world setting, which lets me easily scale the app
+// import queryString from "query-string";
 
 const PATH = "/businesses/search";
 
 export async function getRestaurants(queryParams: SearchParams) {
-  const query = queryString.stringify(queryParams);
+  const query = `term=sushi&location=${queryParams.location}`;
   return await fetch(`${API_BASE_URL}${PATH}?${query}`, {
     headers: {
       Authorization: `Bearer ${BEARER_TOKEN}`,
@@ -13,8 +16,3 @@ export async function getRestaurants(queryParams: SearchParams) {
     },
   }).then((res) => res.json());
 }
-
-export type SearchParams = {
-  term: string;
-  location: string;
-};

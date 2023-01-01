@@ -1,11 +1,12 @@
-import { parse } from "path";
 import { useState, useEffect } from "react";
 import { getRestaurants } from "./api/api";
+import { Restaurant } from "../models/Restaurant";
 
-export function useSearch(term: string, location: string) {
+export function useSearch(location: string) {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  //I could simply pass a string for location as a default state instead
+  //of an object, but i'd use this model in a real world setting for scaling
   const [searchParams, setSearchParams] = useState({
-    term: term,
     location: location,
   });
 
@@ -13,16 +14,11 @@ export function useSearch(term: string, location: string) {
     const fetchData = () => {
       try {
         getRestaurants(searchParams).then((res) => {
-          const parsedRestaurants: Restaurant[] = res.businesses.map(
-            (b: Record<string, any>) => {
-              return {
-                id: b.id,
-                name: b.name,
-                imageURL: b.image_url,
-              };
-            }
+          console.log(res);
+          const parsedRestaurantsData = getParsedRestaurantsData(
+            res.businesses
           );
-          setRestaurants(parsedRestaurants);
+          setRestaurants(parsedRestaurantsData);
         });
       } catch (error) {
         console.log("Error fetching restaurants: ", error);
@@ -38,8 +34,14 @@ export function useSearch(term: string, location: string) {
   };
 }
 
-export type Restaurant = {
-  id: string;
-  name: string;
-  imageURL: string;
-};
+export function getParsedRestaurantsData(
+  data: Record<string, any>[]
+): Restaurant[] {
+  return data.map((b: Record<string, any>) => {
+    return {
+      id: b.id,
+      name: b.name,
+      imageURL: b.image_url,
+    };
+  });
+}

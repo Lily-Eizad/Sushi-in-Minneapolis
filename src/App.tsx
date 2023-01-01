@@ -4,9 +4,7 @@ import Card from "./components/Card";
 import { useSearch } from "./hooks/useSearch";
 
 export default function App() {
-  const { restaurants, searchParams } = useSearch("burgers", "taos");
-
-  console.log(restaurants);
+  const { restaurants, searchParams } = useSearch("taos");
 
   // handle no results or empty results array
   if (!restaurants || !restaurants.length) {
