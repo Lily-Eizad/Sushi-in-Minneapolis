@@ -5,7 +5,7 @@ import Card from "./components/Card";
 import { useSearch } from "./hooks/useSearch";
 
 export default function App() {
-  const { restaurants, infiniteScroll, fetchData } = useSearch("new york");
+  const { restaurants, infiniteScroll, fetchData } = useSearch("Ann Arbor");
 
   console.log("restaunts length ", restaurants.length);
   console.log(restaurants);
@@ -28,7 +28,7 @@ export default function App() {
           className="grid-x"
           pageStart={infiniteScroll.currentPage}
           loadMore={() => fetchData()}
-          hasMore={restaurants.length < 4000 ? true : false}
+          hasMore={restaurants.length < infiniteScroll.dataTotal ? true : false}
           loader={
             <div className="loader" key={0}>
               Loading ...

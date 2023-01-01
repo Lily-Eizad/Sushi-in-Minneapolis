@@ -10,6 +10,7 @@ export function useSearch(location: string) {
   const [infiniteScroll, setInfiniteScroll] = useState({
     currentPage: 0,
     offset: 0,
+    dataTotal: 0,
   });
 
   //I could simply pass a string for location as a default state instead
@@ -27,6 +28,7 @@ export function useSearch(location: string) {
         setInfiniteScroll({
           currentPage: infiniteScroll.currentPage + 1,
           offset: infiniteScroll.offset + 20,
+          dataTotal: res.total,
         });
       });
     } catch (error) {
