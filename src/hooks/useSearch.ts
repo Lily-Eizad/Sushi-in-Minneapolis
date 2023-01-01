@@ -42,6 +42,8 @@ export function getParsedRestaurantsData(
       id: b.id,
       name: b.name,
       imageURL: b.image_url,
+      price: b.price,
+      rating: b.rating,
     };
   });
 }

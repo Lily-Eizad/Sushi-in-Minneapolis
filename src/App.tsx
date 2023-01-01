@@ -4,7 +4,7 @@ import Card from "./components/Card";
 import { useSearch } from "./hooks/useSearch";
 
 export default function App() {
-  const { restaurants, searchParams } = useSearch("taos");
+  const { restaurants, searchParams } = useSearch("new york");
 
   // handle no results or empty results array
   if (!restaurants || !restaurants.length) {
@@ -18,8 +18,8 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div className="grid-container ">
-        <div className="grid-x ">
+      <div className="grid-container">
+        <div className="grid-x">
           {restaurants.map((r) => {
             return <Card key={r.id} restaurant={r} />;
           })}
