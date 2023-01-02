@@ -14,14 +14,15 @@ export default function navbar() {
             <label className="search-label">
               Search sushi restaurants in Minneapolis
             </label>
+
             <input
-              className="search-input"
+              className="input-field search-field"
               type="search"
-              placeholder="Sushi restaurants in Minneapolis..."
+              placeholder="Search for anything..."
             />
           </li>
         </ul> */}
-        {/* <h1 className="nav-bar-title">Sushi restaurants in Minneapolis...</h1> */}
+        <h1 className="nav-bar-title">All the sushi! in Minneapolis...</h1>
       </div>
       {/* <div className="top-bar-right">
         <ul className="menu">
