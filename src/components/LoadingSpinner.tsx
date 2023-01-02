@@ -1,9 +1,4 @@
-import { Restaurant } from "../models/Restaurant";
 import "./LoadingSpinner.css";
-
-export type CardProps = {
-  restaurant: Restaurant;
-};
 
 export default function LoadingSpinner() {
   return (
