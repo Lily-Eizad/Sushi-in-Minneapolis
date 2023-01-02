@@ -1,7 +1,7 @@
 .nav-bar {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
+
   position: fixed;
   top: 0px;
   z-index: 0;

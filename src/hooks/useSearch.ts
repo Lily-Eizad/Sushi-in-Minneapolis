@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 import { getRestaurants } from "./api/api";
 import { Restaurant } from "../models/Restaurant";
 import { SearchParams } from "../models/Search";
+import { InfiniteScrollType } from "../models/InfiniteScroll";
 
 export function useSearch(location: string) {
   //data state
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant>(
+    {} as Restaurant
+  );
   //infinite scroll state
-  const [infiniteScroll, setInfiniteScroll] = useState({
+  const [infiniteScroll, setInfiniteScroll] = useState<InfiniteScrollType>({
     currentPage: 0,
     offset: 0,
     dataTotal: 0,
@@ -46,6 +50,8 @@ export function useSearch(location: string) {
     infiniteScroll,
     fetchData,
     setSearchParams,
+    selectedRestaurant,
+    setSelectedRestaurant,
   };
 }
 
