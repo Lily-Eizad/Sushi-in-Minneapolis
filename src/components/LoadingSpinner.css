@@ -1,3 +1,9 @@
+.loading-spinner-grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* FoundationCSS spinner styles */
 .sk-chase {
   width: 40px;
   height: 40px;

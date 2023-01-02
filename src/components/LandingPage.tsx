@@ -11,27 +11,9 @@ export default function LandingPage() {
   console.log(restaurants);
   console.log("currentPage: ", infiniteScroll.currentPage);
 
-  // handle no results or empty results array
   if (!restaurants || !restaurants.length) {
-    return (
-      <div className="grid-container ">
-        <div className="grid-x ">
-          <div>Sorry, No results matched your search</div>
-        </div>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
-
-  //handle loading state
-  // if(loading) {
-  //   return (
-  //   <div className="loading-spinner-grid-container grid-container">
-  //     <div className="grid-x">
-  //       <LoadingSpinner />
-  //     </div>
-  //   </div>
-  //   )
-  // }
 
   return (
     <div className="grid-container">
@@ -40,11 +22,7 @@ export default function LandingPage() {
         pageStart={infiniteScroll.currentPage}
         loadMore={() => fetchData()}
         hasMore={restaurants.length < infiniteScroll.dataTotal ? true : false}
-        loader={
-          <div className="loader" key={0}>
-            Loading ...
-          </div>
-        }
+        loader={<LoadingSpinner />}
       >
         {restaurants.map((r) => {
           return <RestaurantCard key={r.id} restaurant={r} />;
