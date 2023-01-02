@@ -1,8 +1,64 @@
 .nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: fixed;
   top: 0px;
   z-index: 0;
-  height: 100px;
-  margin-bottom: 100px;
+  height: 80px;
+  background-color: whitesmoke;
   width: 100%;
+  background-color: azure;
 }
+
+.logo-image {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 8px 10px 0px 30px;
+}
+.top-bar-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-bar-title {
+  color: deeppink;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.menu {
+  margin-top: 10px;
+}
+
+.search-input-li-wrapper {
+  width: 350px;
+}
+.search-label {
+  margin: 0px 10px 0px 10px;
+}
+
+.search-input {
+  border: none;
+  padding: 10px;
+  margin: 0px 10px 20px 10px;
+  height: 30px;
+
+  border: 1px solid #eaeaea;
+  outline: none;
+}
+
+.empty-div {
+  width: 90px;
+}
+
+/* .nav-bar-title {
+  color: deeppink;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 30px;
+} */
