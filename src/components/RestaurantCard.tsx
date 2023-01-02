@@ -1,11 +1,11 @@
 import { Restaurant } from "../models/Restaurant";
-import "./Card.css";
+import "./RestaurantCard.css";
 
 export type CardProps = {
   restaurant: Restaurant;
 };
 
-export default function card({ restaurant }: CardProps) {
+export default function RestaurantCard({ restaurant }: CardProps) {
   return (
     <div className="cell medium-6 large-4 small-12">
       <div className="card">

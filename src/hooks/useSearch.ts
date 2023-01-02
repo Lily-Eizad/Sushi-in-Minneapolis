@@ -43,7 +43,6 @@ export function useSearch(location: string) {
   return {
     restaurants,
     searchParams,
-    setInfiniteScroll,
     infiniteScroll,
     fetchData,
     setSearchParams,
