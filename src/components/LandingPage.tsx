@@ -1,4 +1,4 @@
-import "./App.css";
+import "./LandingPage.css";
 import InfiniteScroll from "react-infinite-scroller";
 import RestaurantCard from "./RestaurantCard";
 import { useSearch } from "../hooks/useSearch";

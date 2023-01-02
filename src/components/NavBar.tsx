@@ -1,11 +1,9 @@
+import "./NavBar.css";
+
 export default function navbar() {
   return (
-    <div className="top-bar" id="example-menu">
-      <div className="top-bar-left">
-        <ul className="dropdown menu" data-dropdown-menu>
-          <li className="menu-text">Yushi: Yelp but for sushi</li>
-        </ul>
-      </div>
+    <div className="nav-bar" id="example-menu">
+      <title className="top-bar-left">ushi: Yelp but for sushi</title>
       <div className="top-bar-right">
         <ul className="menu">
           <li>
