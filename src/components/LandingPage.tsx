@@ -2,18 +2,20 @@ import "./LandingPage.css";
 import InfiniteScroll from "react-infinite-scroller";
 import RestaurantCard from "./RestaurantCard";
 import LoadingSpinner from "./LoadingSpinner";
-import { useSearch } from "../hooks/useSearch";
+import { Restaurant } from "../models/Restaurant";
+import { InfiniteScrollType } from "../models/InfiniteScroll";
 
-// export type LandingPageProps = {
-//   restaurants: Restaurant[];
-//   infiniteScroll: InfiniteScrollType;
-//   fetchData: () => void;
-//   setSelectedRestaurant: React.Dispatch<SetStateAction<Restaurant>>;
-// };
+export type LandingPageProps = {
+  restaurants: Restaurant[];
+  infiniteScroll: InfiniteScrollType;
+  fetchData: () => void;
+};
 
-export default function LandingPage() {
-  const { restaurants, infiniteScroll, fetchData } = useSearch();
-
+export default function LandingPage({
+  restaurants,
+  infiniteScroll,
+  fetchData,
+}: LandingPageProps) {
   console.log("restaunts length ", restaurants.length);
   console.log(restaurants);
   console.log("currentPage: ", infiniteScroll.currentPage);
