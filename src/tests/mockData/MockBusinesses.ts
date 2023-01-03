@@ -1,3 +1,5 @@
+import { Restaurant } from "../../models/Restaurant";
+
 export const mockBusinesses: Record<string, any>[] = [
   {
     alias: "the-burger-stand-at-taos-ale-house-taos-9",
@@ -30,5 +32,22 @@ export const mockBusinesses: Record<string, any>[] = [
     review_count: 365,
     transactions: ["pickup"],
     url: "https://www.yelp.com/biz/the-burger-stand-at-taos-ale-house-taos-9",
+  },
+];
+
+export const mockFormattedRestaurants: Restaurant[] = [
+  {
+    id: "jiqwUTqlV0pbVy7pMXlkgQ",
+    imageURL:
+      "https://s3-media2.fl.yelpcdn.com/bphoto/hzXemwJ8OOF3RrQUmIRrxA/o.jpg",
+    isClosed: false,
+    name: "The Burger Stand at Taos Ale House",
+    phoneNumber: "+15757585522",
+    price: "$$",
+    rating: 4,
+    categories: ["Burgers", "Pubs", "American (Traditional)"],
+    address: ["401 Paseo Del Pueblo Norte", "Taos, NM 87571"],
+    reviewCount: 365,
+    transactions: ["pickup"],
   },
 ];

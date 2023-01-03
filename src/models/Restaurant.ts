@@ -2,7 +2,7 @@ export type Restaurant = {
   id: string;
   imageURL: string;
   name: string;
-  rating: string;
+  rating: number;
   price: string;
   categories: string[];
   phoneNumber: string;

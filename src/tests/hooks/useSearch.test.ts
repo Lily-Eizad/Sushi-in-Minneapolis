@@ -3,7 +3,7 @@ import { Restaurant } from "../../models/Restaurant";
 import { getParsedRestaurantsData } from "../../hooks/useSearch";
 import { mockBusinesses } from "../mockData/MockBusinesses";
 
-describe("getParsedRestaurantData", () => {
+describe("getParsedRestaurantData tests", () => {
   test("should return correctly formatted Restaurant data", () => {
     const result = getParsedRestaurantsData(mockBusinesses);
     const expectedResult: Restaurant[] = [

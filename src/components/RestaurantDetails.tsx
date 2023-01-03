@@ -1,13 +1,21 @@
 import "./RestaurantDetails.css";
-import { Restaurant } from "../models/Restaurant";
+// import { Restaurant } from "../models/Restaurant";
+import { useSearch } from "../hooks/useSearch";
+import { useRestaurantDetails } from "../hooks/useRestaurantDetails";
+import LoadingSpinner from "./LoadingSpinner";
 
-export type RestaurantDetailsProps = {
-  selectedRestaurant: Restaurant;
-};
+// export type RestaurantDetailsProps = {
+//   selectedRestaurant: Restaurant;
+// };
 
-export default function RestaurantDetails({
-  selectedRestaurant,
-}: RestaurantDetailsProps) {
+export default function RestaurantDetails() {
+  const { restaurants } = useSearch();
+  const { selectedRestaurant } = useRestaurantDetails(restaurants);
+
+  if (!selectedRestaurant) {
+    return <LoadingSpinner />;
+  }
+
   console.log("selected res ", selectedRestaurant);
 
   return (
