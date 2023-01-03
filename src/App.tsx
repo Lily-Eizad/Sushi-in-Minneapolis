@@ -3,6 +3,7 @@ import Navbar from "./components/NavBar";
 import LandingPage from "./components/LandingPage";
 import RestaurantDetails from "./components/RestaurantDetails";
 import { useSearch } from "./hooks/useSearch";
+import NotFoundPage from "./components/404Page";
 
 export default function App() {
   const { restaurants, infiniteScroll, fetchData } = useSearch();
@@ -11,6 +12,7 @@ export default function App() {
     <>
       <Navbar />
       <Routes>
+        <Route path="*" element={<NotFoundPage />} />
         <Route path="/search/restaurants/:id" element={<RestaurantDetails />} />
         <Route
           path="/search/restaurants"

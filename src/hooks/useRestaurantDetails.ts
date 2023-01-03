@@ -1,17 +1,29 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Restaurant } from "../models/Restaurant";
+import { getRestaurantByID } from "./api/api";
 
-export function useRestaurantDetails(restaurants: Restaurant[]) {
-  const { id } = useParams();
+export function useRestaurantDetails(bisID: string | undefined) {
+  const [selectedRestaurant, setSelectedRestaurant] =
+    useState<Record<string, any>>();
+  const [loading, setLoading] = useState(false);
 
-  const selectedRestaurant = getSelectedRestaurant(restaurants, id);
+  const fetchData = () => {
+    try {
+      setLoading(true);
+      getRestaurantByID(bisID).then((res) => {
+        setSelectedRestaurant(res);
+        setLoading(false);
+      });
+    } catch (error) {
+      setLoading(false);
+      console.log("Error fetching restaurant: ", error);
+    }
+  };
 
-  return { selectedRestaurant };
-}
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-export function getSelectedRestaurant(
-  restaurants: Restaurant[],
-  id: string | undefined
-): Restaurant | undefined {
-  return restaurants.find((r) => r.id === id);
+  return { selectedRestaurant, loading };
 }
