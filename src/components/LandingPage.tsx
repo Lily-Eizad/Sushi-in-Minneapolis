@@ -4,7 +4,6 @@ import RestaurantCard from "./RestaurantCard";
 import LoadingSpinner from "./LoadingSpinner";
 import { Restaurant } from "../models/Restaurant";
 import { InfiniteScrollType } from "../models/InfiniteScroll";
-import { isError } from "util";
 
 export type LandingPageProps = {
   restaurants: Restaurant[];
