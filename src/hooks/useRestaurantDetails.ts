@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Restaurant } from "../models/Restaurant";
 import { getRestaurantByID } from "./api/api";
 
 export function useRestaurantDetails(bisID: string | undefined) {
