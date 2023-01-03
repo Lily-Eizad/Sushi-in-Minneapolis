@@ -1,7 +1,13 @@
 export type Restaurant = {
   id: string;
-  name: string;
   imageURL: string;
+  name: string;
+  rating: number;
   price: string;
-  rating: string;
+  categories: string[];
+  phoneNumber: string;
+  isClosed: boolean;
+  address: string[]; //display address
+  reviewCount: number;
+  transactions: string[];
 };

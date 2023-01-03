@@ -1,0 +1,24 @@
+.restaurant-details-panel {
+  background: black;
+  color: white;
+  padding: 20px;
+}
+
+.details-table {
+  list-style: none;
+  text-align: center;
+}
+
+.categories {
+  margin-bottom: 35px;
+}
+
+.list-item-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.address-field {
+  margin-bottom: 0px;
+}
