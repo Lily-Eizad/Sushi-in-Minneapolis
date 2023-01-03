@@ -12,21 +12,20 @@ describe("useRestaurant details tests", () => {
       mockFormattedRestaurants,
       "jiqwUTqlV0pbVy7pMXlkgQ"
     );
-    const expectedResult: Restaurant[] = [
-      {
-        id: mockBusinesses[0].id,
-        name: mockBusinesses[0].name,
-        imageURL: mockBusinesses[0].image_url,
-        price: mockBusinesses[0].price,
-        rating: mockBusinesses[0].rating,
-        categories: mockBusinesses[0].categories,
-        isClosed: mockBusinesses[0].isClosed,
-        phoneNumber: mockBusinesses[0].phoneNumber,
-        address: mockBusinesses[0].display_address,
-        reviewCount: mockBusinesses[0].review_count,
-        transactions: mockBusinesses[0].transactions,
-      },
-    ];
+    const expectedResult = {
+      id: mockFormattedRestaurants[0].id,
+      name: mockFormattedRestaurants[0].name,
+      imageURL: mockFormattedRestaurants[0].imageURL,
+      price: mockFormattedRestaurants[0].price,
+      rating: mockFormattedRestaurants[0].rating,
+      categories: mockFormattedRestaurants[0].categories,
+      isClosed: mockFormattedRestaurants[0].isClosed,
+      phoneNumber: mockFormattedRestaurants[0].phoneNumber,
+      address: mockFormattedRestaurants[0].address,
+      reviewCount: mockFormattedRestaurants[0].reviewCount,
+      transactions: mockFormattedRestaurants[0].transactions,
+    };
+
     expect(result).toEqual(expectedResult);
   });
 });

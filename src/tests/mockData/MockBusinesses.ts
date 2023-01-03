@@ -38,10 +38,10 @@ export const mockBusinesses: Record<string, any>[] = [
 export const mockFormattedRestaurants: Restaurant[] = [
   {
     id: "jiqwUTqlV0pbVy7pMXlkgQ",
+    name: "The Burger Stand at Taos Ale House",
     imageURL:
       "https://s3-media2.fl.yelpcdn.com/bphoto/hzXemwJ8OOF3RrQUmIRrxA/o.jpg",
     isClosed: false,
-    name: "The Burger Stand at Taos Ale House",
     phoneNumber: "+15757585522",
     price: "$$",
     rating: 4,

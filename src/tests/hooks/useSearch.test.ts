@@ -13,12 +13,14 @@ describe("getParsedRestaurantData tests", () => {
         imageURL: mockBusinesses[0].image_url,
         price: mockBusinesses[0].price,
         rating: mockBusinesses[0].rating,
-        categories: mockBusinesses[0].categories,
-        isClosed: mockBusinesses[0].isClosed,
-        phoneNumber: mockBusinesses[0].phoneNumber,
-        address: mockBusinesses[0].display_address,
+        categories: mockBusinesses[0].categories.map(
+          (c: Record<string, any>) => c.title
+        ),
+        isClosed: mockBusinesses[0].is_closed,
+        phoneNumber: mockBusinesses[0].phone,
         reviewCount: mockBusinesses[0].review_count,
         transactions: mockBusinesses[0].transactions,
+        address: mockBusinesses[0].location.display_address,
       },
     ];
     expect(result).toEqual(expectedResult);
