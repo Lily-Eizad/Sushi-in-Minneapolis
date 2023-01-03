@@ -6,7 +6,6 @@ import { InfiniteScrollType } from "../models/InfiniteScroll";
 export function useSearch() {
   //data state
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
-  // const [selectedRestaurant, setSelectedRestaurant] = useState({} as Restaurant)
   //infinite scroll state
   const [infiniteScroll, setInfiniteScroll] = useState<InfiniteScrollType>({
     currentPage: 0,
@@ -14,18 +13,9 @@ export function useSearch() {
     dataTotal: 0,
   });
 
-  //I could simply pass a string for location as a default state instead
-  //of an object, but i'd use this model in a real world setting for scaling
-  // const [searchParams, setSearchParams] = useState<SearchParams>({
-  //   location: location,
-  // });
-
   const fetchData = () => {
     try {
-      // setLoading(true);
       getMinneapolisSushiRestaurants(infiniteScroll.offset).then((res) => {
-        console.log(res);
-        // setLoading(false);
         const parsedRestaurantsData = getParsedRestaurantsData(res.businesses);
         setRestaurants([...restaurants, ...parsedRestaurantsData]);
         setInfiniteScroll({
@@ -47,8 +37,6 @@ export function useSearch() {
     restaurants,
     infiniteScroll,
     fetchData,
-    // selectedRestaurant,
-    // setSelectedRestaurant,
   };
 }
 
