@@ -1,12 +1,6 @@
 export type Restaurant = {
   id: string;
-  name: string;
   imageURL: string;
-  price: string;
-  rating: string;
-};
-
-export type RestaurantDetails = {
   name: string;
   rating: string;
   price: string;

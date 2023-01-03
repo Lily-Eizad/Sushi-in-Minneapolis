@@ -65,6 +65,12 @@ export function getParsedRestaurantsData(
       imageURL: b.image_url,
       price: b.price,
       rating: b.rating,
+      categories: b.categories.map((c: Record<string, any>) => c.title),
+      isClosed: b.is_closed,
+      phoneNumber: b.phone,
+      address: b.location.display_address,
+      reviewCount: b.review_count,
+      transactions: b.transactions?.length ? b.transactions : ["n/a"],
     };
   });
 }

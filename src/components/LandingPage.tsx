@@ -34,7 +34,7 @@ export default function LandingPage({
       pageStart={infiniteScroll.currentPage}
       loadMore={() => fetchData()}
       hasMore={restaurants.length < infiniteScroll.dataTotal ? true : false}
-      loader={<LoadingSpinner />}
+      loader={<LoadingSpinner key={"k"} />}
     >
       {restaurants.map((r) => {
         return (

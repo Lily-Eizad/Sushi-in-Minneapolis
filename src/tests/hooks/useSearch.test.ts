@@ -13,6 +13,12 @@ describe("getParsedRestaurantData", () => {
         imageURL: mockBusinesses[0].image_url,
         price: mockBusinesses[0].price,
         rating: mockBusinesses[0].rating,
+        categories: mockBusinesses[0].categories,
+        isClosed: mockBusinesses[0].isClosed,
+        phoneNumber: mockBusinesses[0].phoneNumber,
+        address: mockBusinesses[0].display_address,
+        reviewCount: mockBusinesses[0].review_count,
+        transactions: mockBusinesses[0].transactions,
       },
     ];
     expect(result).toEqual(expectedResult);
