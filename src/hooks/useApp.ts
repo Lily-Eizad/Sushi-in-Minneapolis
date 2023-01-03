@@ -3,9 +3,12 @@ import { getMinneapolisSushiRestaurants } from "./api/api";
 import { Restaurant } from "../models/Restaurant";
 import { InfiniteScrollType } from "../models/InfiniteScroll";
 
-export function useSearch() {
+//main hook for the App
+
+export function useApp() {
   //data state
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const [isError, setIsError] = useState(false);
   //infinite scroll state
   const [infiniteScroll, setInfiniteScroll] = useState<InfiniteScrollType>({
     currentPage: 0,
@@ -25,6 +28,7 @@ export function useSearch() {
         });
       });
     } catch (error) {
+      setIsError(true);
       console.log("Error fetching restaurants: ", error);
     }
   };
@@ -37,6 +41,7 @@ export function useSearch() {
     restaurants,
     infiniteScroll,
     fetchData,
+    isError,
   };
 }
 

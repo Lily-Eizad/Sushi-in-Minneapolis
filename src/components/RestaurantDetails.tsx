@@ -1,13 +1,7 @@
 import "./RestaurantDetails.css";
-import { Restaurant } from "../models/Restaurant";
 import { useRestaurantDetails } from "../hooks/useRestaurantDetails";
 import LoadingSpinner from "./LoadingSpinner";
 import { useParams } from "react-router-dom";
-import { loadavg } from "os";
-
-// export type RestaurantDetailsProps = {
-//   selectedRestaurant: Restaurant;
-// };
 
 export default function RestaurantDetails() {
   const { id } = useParams();

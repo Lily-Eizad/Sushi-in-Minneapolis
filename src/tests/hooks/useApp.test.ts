@@ -1,6 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
 import { Restaurant } from "../../models/Restaurant";
-import { getParsedRestaurantsData } from "../../hooks/useSearch";
+import { getParsedRestaurantsData } from "../../hooks/useApp";
 import { mockBusinesses } from "../mockData/MockBusinesses";
 
 describe("getParsedRestaurantData tests", () => {
