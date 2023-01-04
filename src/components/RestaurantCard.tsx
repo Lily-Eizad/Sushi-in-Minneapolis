@@ -21,7 +21,7 @@ export default function RestaurantCard({ restaurant }: CardProps) {
             src={restaurant?.imageURL}
           />
           <div className="card-section">
-            <h1 role="heading" className="card-title">
+            <h1 className="card-title">
               <b>{restaurant?.name}</b>
             </h1>
             <h2 className="rating">

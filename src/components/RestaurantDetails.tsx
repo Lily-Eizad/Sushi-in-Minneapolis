@@ -28,9 +28,7 @@ export default function RestaurantDetails() {
       <div className="restaurant-details-panel">
         <ul className="details-table">
           <li>
-            <h1 role="heading" className="header">
-              Restaurant Details:
-            </h1>
+            <h1 className="header">Restaurant Details:</h1>
           </li>
           <li>
             <h1>{selectedRestaurant?.name}</h1>
