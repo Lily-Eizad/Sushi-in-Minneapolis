@@ -38,12 +38,14 @@ because!
 8. Restaurant Details page lets you know if it can't find the restaurant for a given ID
 9. Meaningful Page titles 
 10. Accessibility-friendly (ARIA roles, alt text, keyboard navigation, color contrasts, minimal animation, meaninful URLs, semantic HTML)
+11. Fixed top bar
 
 ### ✨ How to Run the App
 1. Clone Repo 
 2. npm install 
 3. add config file in the /hooks/api folder (I can provide this file which contains the API key) 
-4. npm start (below there is some more information on npm) 
+4. To get past CORS issues, go to [this link](https://cors-anywhere.herokuapp.com/corsdemo) and click the `Request temporary access to server` which creates a third party proxy which lets you get past the Yelp API CORS settings.
+5. npm start (below there is some more information on npm) 
 
 
 
