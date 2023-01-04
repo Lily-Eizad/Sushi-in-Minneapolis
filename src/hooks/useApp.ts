@@ -20,6 +20,10 @@ export function useApp() {
     try {
       getMinneapolisSushiRestaurants(infiniteScroll.offset).then((res) => {
         const parsedRestaurantsData = getParsedRestaurantsData(res.businesses);
+        //handle if api returns empty array
+        if (!res.businesses.length) {
+          setIsError(true);
+        }
         setRestaurants([...restaurants, ...parsedRestaurantsData]);
         setInfiniteScroll({
           currentPage: infiniteScroll.currentPage + 1,

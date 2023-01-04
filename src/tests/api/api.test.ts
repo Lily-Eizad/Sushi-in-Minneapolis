@@ -3,7 +3,7 @@ import {
   getMinneapolisSushiRestaurants,
   getRestaurantByID,
 } from "../../hooks/api/api";
-import { mockBusinesses } from "../mockData/MockBusinesses";
+import { mockBusinesses } from "../mockData/MockRestaurantData";
 
 describe("search API test", () => {
   let results = false;
