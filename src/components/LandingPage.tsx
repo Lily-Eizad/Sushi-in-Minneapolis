@@ -18,10 +18,6 @@ export default function LandingPage({
   fetchData,
   isError,
 }: LandingPageProps) {
-  // console.log("restaunts length ", restaurants.length);
-  // console.log(restaurants);
-  // console.log("currentPage: ", infiniteScroll.currentPage);
-
   if (!restaurants.length && !isError) {
     return <LoadingSpinner />;
   }

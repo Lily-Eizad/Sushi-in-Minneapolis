@@ -4,6 +4,10 @@
   padding: 20px;
 }
 
+.header {
+  color: deeppink;
+}
+
 .details-table {
   list-style: none;
   text-align: center;
