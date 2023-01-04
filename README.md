@@ -4,12 +4,12 @@
 This app uses Yelp APIs to get all the sushi restaurants in Minneapolis. It also shows you details about each restaurant. 
 
 ### Tech Stack
-Built with: React/ TypeScript / JavaScript. 
-State Management: React Hooks. 
-UI Framework: Foundation CSS. 
-Testing: React Testing Library/ Jest. 
-Routing: React Router. 
-Package Manager: NPM (see the bottom section of this ReadMe for how to start the app, note: you will also need to set the environment in a config file that I have not committed to this repo due the fact that it contains the API key and should be hidden for security reasons.) 
+  Built with: React/ TypeScript / JavaScript. 
+  State Management: React Hooks. 
+  UI Framework: Foundation CSS. 
+  Testing: React Testing Library/ Jest. 
+  Routing: React Router. 
+  Package Manager: NPM (see the bottom section of this ReadMe for how to start the app, note: you will also need to set the environment in a config file that I have not committed to this repo due the fact that it contains the API key and should be hidden for security reasons.) 
 
 Other notable dependencies:  
 Dynamic data loading: React Infinite Scroller 
