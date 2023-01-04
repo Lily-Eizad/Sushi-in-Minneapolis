@@ -3,3 +3,8 @@
   color: white;
   padding: 20px;
 }
+
+.go-home-link {
+  color: deeppink;
+  text-decoration: underline;
+}

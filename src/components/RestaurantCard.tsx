@@ -9,6 +9,7 @@ export type CardProps = {
 export default function RestaurantCard({ restaurant }: CardProps) {
   return (
     <div
+      role="contentinfo"
       data-testid="testRestaurantCards"
       className="cell medium-6 large-4 small-12"
     >

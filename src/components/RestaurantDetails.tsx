@@ -23,9 +23,13 @@ export default function RestaurantDetails() {
     <div
       data-testid="testDetailsPanel"
       className="cell medium-6 large-4 small-12"
+      role="list"
     >
       <div className="restaurant-details-panel">
         <ul className="details-table">
+          <li>
+            <h1 className="header">Restaurant Details:</h1>
+          </li>
           <li>
             <h1>{selectedRestaurant?.name}</h1>
           </li>

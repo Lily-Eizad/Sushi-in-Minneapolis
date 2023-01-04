@@ -2,7 +2,7 @@ import "./NavBar.css";
 
 export default function navbar() {
   return (
-    <div className="nav-bar">
+    <div role="navigation" className="nav-bar">
       <div className="top-bar-left">
         <img
           alt={"site logo placeholder"}

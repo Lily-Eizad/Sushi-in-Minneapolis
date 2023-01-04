@@ -18,17 +18,13 @@ export default function LandingPage({
   fetchData,
   isError,
 }: LandingPageProps) {
-  // console.log("restaunts length ", restaurants.length);
-  // console.log(restaurants);
-  // console.log("currentPage: ", infiniteScroll.currentPage);
-
   if (!restaurants.length && !isError) {
     return <LoadingSpinner />;
   }
 
   if (!restaurants || isError) {
     return (
-      <div className="grid-x">
+      <div role="banner" className="grid-x">
         <div data-testid="testErrorState" className="error-div">
           <h1>Sorry, unable to retrieve sushi restaurants in Minneapolis</h1>
         </div>
