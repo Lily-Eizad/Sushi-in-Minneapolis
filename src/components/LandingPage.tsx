@@ -9,23 +9,34 @@ export type LandingPageProps = {
   restaurants: Restaurant[];
   infiniteScroll: InfiniteScrollType;
   fetchData: () => void;
+  isError: boolean;
 };
 
 export default function LandingPage({
   restaurants,
   infiniteScroll,
   fetchData,
+  isError,
 }: LandingPageProps) {
-  console.log("restaunts length ", restaurants.length);
-  console.log(restaurants);
-  console.log("currentPage: ", infiniteScroll.currentPage);
+  // console.log("restaunts length ", restaurants.length);
+  // console.log(restaurants);
+  // console.log("currentPage: ", infiniteScroll.currentPage);
 
-  if (!restaurants || !restaurants.length) {
+  if (!restaurants.length && !isError) {
     return <LoadingSpinner />;
   }
 
+  if (!restaurants || isError) {
+    return (
+      <div className="grid-x">
+        <div data-testid="testErrorState" className="error-div">
+          <h1>Sorry, unable to retrieve sushi restaurants in Minneapolis</h1>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    // <div className="grid-container">
     <InfiniteScroll
       className="grid-x"
       pageStart={infiniteScroll.currentPage}
@@ -37,6 +48,5 @@ export default function LandingPage({
         return <RestaurantCard key={r.id} restaurant={r} />;
       })}
     </InfiniteScroll>
-    // </div>
   );
 }

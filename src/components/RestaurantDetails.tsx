@@ -1,19 +1,11 @@
 import "./RestaurantDetails.css";
-import { Restaurant } from "../models/Restaurant";
 import { useRestaurantDetails } from "../hooks/useRestaurantDetails";
 import LoadingSpinner from "./LoadingSpinner";
 import { useParams } from "react-router-dom";
-import { loadavg } from "os";
-
-// export type RestaurantDetailsProps = {
-//   selectedRestaurant: Restaurant;
-// };
 
 export default function RestaurantDetails() {
   const { id } = useParams();
   const { selectedRestaurant, loading } = useRestaurantDetails(id);
-
-  console.log(selectedRestaurant);
 
   if (loading) {
     return <LoadingSpinner />;
@@ -28,7 +20,10 @@ export default function RestaurantDetails() {
   }
 
   return (
-    <div className="cell medium-6 large-4 small-12">
+    <div
+      data-testid="testDetailsPanel"
+      className="cell medium-6 large-4 small-12"
+    >
       <div className="restaurant-details-panel">
         <ul className="details-table">
           <li>
@@ -37,8 +32,8 @@ export default function RestaurantDetails() {
           <li className="categories">
             <span>| </span>
             {selectedRestaurant?.categories?.map(
-              (category: Record<string, any>) => {
-                return <span> {category.title} |</span>;
+              (category: Record<string, any>, index: number) => {
+                return <span key={index}> {category.title} |</span>;
               }
             )}
           </li>
@@ -72,8 +67,12 @@ export default function RestaurantDetails() {
               <strong>📍 Address:&nbsp;</strong>
             </h2>
             {selectedRestaurant?.location?.display_address?.map(
-              (field: string) => {
-                return <h3 className="address-field">{field}</h3>;
+              (field: string, index: number) => {
+                return (
+                  <h3 key={index} className="address-field">
+                    {field}
+                  </h3>
+                );
               }
             )}
           </li>
@@ -83,9 +82,11 @@ export default function RestaurantDetails() {
                 <strong>🚗 Available services:&nbsp;</strong>
               </h2>
               <h3>|&nbsp;</h3>
-              {selectedRestaurant?.transactions?.map((t: string) => {
-                return <h3>{t} |</h3>;
-              })}
+              {selectedRestaurant?.transactions?.map(
+                (t: string, index: number) => {
+                  return <h3 key={index}>{t} |</h3>;
+                }
+              )}
             </li>
           )}
           <li className="list-item-wrapper">

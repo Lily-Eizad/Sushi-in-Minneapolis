@@ -2,7 +2,10 @@ import "./LoadingSpinner.css";
 
 export default function LoadingSpinner() {
   return (
-    <div className="loading-spinner-grid-container grid-container">
+    <div
+      data-testid="testLoading"
+      className="loading-spinner-grid-container grid-container"
+    >
       <div className="grid-x">
         <div className="cell">
           <h1>Loading...</h1>

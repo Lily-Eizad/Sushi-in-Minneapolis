@@ -2,11 +2,11 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import LandingPage from "./components/LandingPage";
 import RestaurantDetails from "./components/RestaurantDetails";
-import { useSearch } from "./hooks/useSearch";
+import { useApp } from "./hooks/useApp";
 import NotFoundPage from "./components/404Page";
 
 export default function App() {
-  const { restaurants, infiniteScroll, fetchData } = useSearch();
+  const { restaurants, infiniteScroll, fetchData, isError } = useApp();
 
   return (
     <>
@@ -21,6 +21,7 @@ export default function App() {
               restaurants={restaurants}
               infiniteScroll={infiniteScroll}
               fetchData={fetchData}
+              isError={isError}
             />
           }
         />

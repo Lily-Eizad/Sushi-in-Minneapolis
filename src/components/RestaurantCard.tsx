@@ -8,9 +8,10 @@ export type CardProps = {
 
 export default function RestaurantCard({ restaurant }: CardProps) {
   return (
-    // <Link to={`/${restaurant.id}`} relative="path">
-
-    <div className="cell medium-6 large-4 small-12">
+    <div
+      data-testid="testRestaurantCards"
+      className="cell medium-6 large-4 small-12"
+    >
       <Link to={`/search/restaurants/${restaurant?.id}`} relative="path">
         <div className="card">
           <img
