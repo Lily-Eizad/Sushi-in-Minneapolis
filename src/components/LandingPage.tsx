@@ -24,7 +24,7 @@ export default function LandingPage({
 
   if (!restaurants || isError) {
     return (
-      <div className="grid-x">
+      <div role="banner" className="grid-x">
         <div data-testid="testErrorState" className="error-div">
           <h1>Sorry, unable to retrieve sushi restaurants in Minneapolis</h1>
         </div>
