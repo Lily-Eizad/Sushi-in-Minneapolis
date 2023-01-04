@@ -4,19 +4,19 @@
 This app uses Yelp APIs to get all the sushi restaurants in Minneapolis. It also shows you details about each restaurant. 
 
 ### ✨ Tech Stack
-*Built with: React/ TypeScript / JavaScript. 
-*State Management: React Hooks. 
-*UI Framework: Foundation CSS. 
-*Testing: React Testing Library/ Jest. 
-*Routing: React Router. 
-*Package Manager: NPM (see the bottom section of this ReadMe for how to start the app, note: you will also need to set the environment in a config file that I have not committed to this repo due the fact that it contains the API key and should be hidden for security reasons.) 
+##### Built with: `React/ TypeScript / JavaScript` 
+##### State Management: `React Hooks`
+##### UI Framework: `Foundation CSS` 
+##### Testing: `React Testing Library/ Jest` 
+##### Routing: `React Router`
+##### Package Manager: `NPM (see the bottom section of this ReadMe for how to start the app, note: you will also need to NPM install and set the environment in a config file that I have not committed to this repo due the fact that it contains the API key and should be hidden for security reasons. Please see the How To Run The App section )`
 
 Other notable dependencies:  
-Dynamic data loading: React Infinite Scroller 
+##### Dynamic data loading: `React Infinite Scroller` 
 
 ### ✨ Reasoning/ Decision Making
 Why TypeScript? 
-TypeScript modularizes applications and helps eliminate bugs by checking data types. 
+TypeScript modularizes applications and helps eliminate bugs by checking data types. It's great for scaling, architecting and data modeling. 
 
 Why Foundation CSS? 
 For the purposes of meeting project requirements of avoiding heavily stylized frameworks such as MUI. I've used this very sparringly by importing the CDN. The functionality of Foundation in this app is mostly for responsive purposes and to normalize the CSS across different browsers. Since I'm not importing any pre-built components, the styles are pretty minimal. 
@@ -27,16 +27,27 @@ Sushi is one of the superior food categories. According to science, you can tell
 Why Minneapolis?
 because!
 
-### Notable Features
+### ✨ Notable UI Features
+1. Dynamic data loading with infinite scroll
+2. Responsive UI
+3. Won't lose your spot scrolling when hitting browser back button on Restaurant Details page
+4. 404 Page for bad URLs
+5. Loading spinner shows when data is loading
+6. Meaningful URLs - change dynamically with the screens 
+7. Restaurant Details page has a shareable URL and will load independently 
+8. Restaurant Details page lets you know if it can't find the restaurant for a given ID
+9. Meaningful Page titles 
+10. Accessibility-friendly (ARIA roles, alt text, keyboard navigation, color contrasts, minimal animation, meaninful URLs, semantic HTML)
 
-### How to Run the App
+### ✨ How to Run the App
+1. Clone Repo 
+2. npm install 
+3. add config file in the /hooks/api folder (I can provide this file which contains the API key) 
+4. npm start (below there is some more information on npm) 
 
 
 
-
-
-
-🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟
+🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟
 
 # Getting Started with Create React App
 
