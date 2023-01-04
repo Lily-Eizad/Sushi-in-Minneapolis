@@ -7,7 +7,7 @@ This app uses Yelp APIs to get all the sushi restaurants in Minneapolis. It also
 ##### Built with: `React/ TypeScript / JavaScript` 
 ##### State Management: `React Hooks`
 ##### UI Framework: `Foundation CSS` 
-##### Testing: `React Testing Library/ Jest` 
+##### Testing: `React Testing Library / Jest` 
 ##### Routing: `React Router`
 ##### Package Manager: `NPM (see the bottom section of this ReadMe for how to start the app, note: you will also need to NPM install and set the environment in a config file that I have not committed to this repo due the fact that it contains the API key and should be hidden for security reasons. Please see the How To Run The App section )`
 
@@ -44,7 +44,7 @@ because!
 1. Clone Repo 
 2. npm install 
 3. add config file in the /hooks/api folder (I can provide this file which contains the API key) 
-4. To get past CORS issues, go to [this link](https://cors-anywhere.herokuapp.com/corsdemo) and click the `Request temporary access to server` which creates a third party proxy which lets you get past the Yelp API CORS settings.
+4. To get past CORS issues, go to [this link](https://cors-anywhere.herokuapp.com/corsdemo) and click the `Request temporary access to server` which creates a third party proxy that lets you get past the Yelp API CORS settings.
 5. npm start (below there is some more information on npm) 
 
 
