@@ -1,3 +1,43 @@
+# 🍣 Welcome to sushi in Minneapolis! 
+
+### A bit about what the app does/scope: 
+This app uses Yelp APIs to get all the sushi restaurants in Minneapolis. It shows you details about each restaurant. 
+
+### Tech Stack
+Built with: React/ TypeScript / JavaScript
+State Management: React Hooks
+UI Framework: Foundation CSS 
+Testing: React Testing Library/ Jest
+Routing: React Router
+Package Manager: NPM (see the bottom section of this ReadMe for how to start the app, note: you will also need to set the environment in a config file that I have not committed to this repo due the fact that it contains the API key and should be hidden for security reasons.) 
+
+other notable dependencies: 
+Dynamic data loading: React Infinite Scroller 
+
+### Reasoning/ Decision Making
+Why TypeScript? 
+TypeScript modularizes applications and helps eliminate bugs by checking data types. 
+
+Why Foundation CSS? 
+For the purposes of meeting project requirements of avoiding heavily stylized frameworks such as MUI. I've used this very sparringly by importing the CDN. The functionality of Foundation in this app is mostly for responsive purposes and to normalize the CSS across different browsers. Since I'm not importing any pre-built components, the styles are pretty minimal. 
+
+Why Sushi? 
+Sushi is one of the superior food categories. According to science, you can tell a lot about a city's restaurant scene by its sushi restaurants. 
+
+Why Minneapolis?
+because!
+
+### Notable Features
+
+### How to Run the App
+
+
+
+
+
+
+🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟🐟
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -44,3 +84,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
