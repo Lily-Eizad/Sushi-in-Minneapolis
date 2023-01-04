@@ -43,7 +43,7 @@ because!
 ### ✨ How to Run the App
 1. Clone Repo 
 2. npm install 
-3. add config file in the /hooks/api folder (I can provide this file which contains the API key) 
+3. add a `config.js` file in the `/src/hooks/api` folder (I can provide the content of this file which contains the API key) 
 4. To get past CORS issues, go to [this link](https://cors-anywhere.herokuapp.com/corsdemo) and click the `Request temporary access to server` which creates a third party proxy that lets you get past the Yelp API CORS settings.
 5. npm start (below there is some more information on npm) 
 
